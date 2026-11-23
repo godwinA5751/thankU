@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b38">
+  <meta name="description" content="Join the MR THANK YOU Giveaway. A special appreciation giveaway with 100+ winners.">
+
+  <title>MR THANK YOU | Exclusive Giveaway</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #315cf5;
+      --primary-dark: #2045d5;
+      --navy: #101b38;
+      --text: #202a40;
+      --muted: #748097;
+      --bg: #f5f7fc;
+      --white: #ffffff;
+      --border: #e9edf5;
+      --green: #16a36a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(100% - 40px, 1050px);
+      margin: auto;
+    }
+
+    /* Navigation */
+
+    header {
+      background: rgba(255,255,255,.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(15px);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -.6px;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-link {
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 600;
+      transition: color .2s;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 9px;
+      font-size: .88rem;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 15%, rgba(83,119,255,.22), transparent 30%),
+        radial-gradient(circle at 10% 100%, rgba(53,100,255,.17), transparent 35%),
+        linear-gradient(135deg, #101b38, #182c5c 65%, #1c3c85);
+      color: white;
+      padding: 90px 20px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 50%;
+      width: 350px;
+      height: 350px;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      top: -220px;
+      right: -80px;
+    }
+
+    .hero::after {
+      bottom: -270px;
+      left: -80px;
+      width: 450px;
+      height: 450px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 730px;
+      margin: auto;
+      animation: fadeUp .8s ease both;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.11);
+      border: 1px solid rgba(255,255,255,.16);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .eyebrow span {
+      width: 8px;
+      height: 8px;
+      background: #69e8a8;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #69e8a8;
+    }
+
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.5rem, 7vw, 4.7rem);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #83a1ff;
+    }
+
+    .hero-description {
+      color: #c5d0e8;
+      font-size: 1.05rem;
+      max-width: 570px;
+      margin: 0 auto 32px;
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 30px;
+      background: white;
+      color: var(--navy);
+      border-radius: 11px;
+      font-weight: 800;
+      font-size: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.2);
+      transition: .25s;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0,0,0,.3);
+    }
+
+    .hero-note {
+      margin-top: 17px;
+      color: #aebcdb;
+      font-size: .82rem;
+    }
+
+    /* Main content */
+
+    main {
+      padding: 55px 0 75px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: -90px;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 65px;
+    }
+
+    .stat-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 25px 15px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(20,40,90,.06);
+    }
+
+    .stat-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.3;
+    }
+
+    .stat-label {
+      font-size: .84rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading small {
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: .73rem;
+    }
+
+    .section-heading h2 {
+      font-family: 'Outfit', sans-serif;
+      color: var(--navy);
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      margin-top: 8px;
+      letter-spacing: -.8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-top: 8px;
+      font-size: .95rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-bottom: 65px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(20,40,90,.035);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(20,40,90,.07);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: #edf1ff;
+      color: var(--primary);
+      border-radius: 13px;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    /* Participation */
+
+    .participate {
+      background: linear-gradient(135deg, #edf2ff, #f6f8ff);
+      border: 1px solid #dce5ff;
+      border-radius: 20px;
+      padding: 45px 35px;
+      text-align: center;
+      margin-bottom: 65px;
+    }
+
+    .participate h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .participate > p {
+      color: var(--muted);
+      max-width: 580px;
+      margin: 0 auto 25px;
+      font-size: .95rem;
+    }
+
+    .participate-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--primary);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-weight: 800;
+      box-shadow: 0 7px 20px rgba(49,92,245,.22);
+      transition: .25s;
+    }
+
+    .participate-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .limited-note {
+      margin-top: 17px;
+      color: #6e7b96;
+      font-size: .8rem;
+    }
+
+    /* Rules */
+
+    .rules-card {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .rules-list {
+      list-style: none;
+      display: grid;
+      gap: 17px;
+      margin-top: 22px;
+    }
+
+    .rules-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      color: #58657c;
+      font-size: .93rem;
+    }
+
+    .check {
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      background: #e6f7ef;
+      color: var(--green);
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    /* Winners */
+
+    .winners-section {
+      margin-top: 65px;
+    }
+
+    .winners-card {
+      max-width: 750px;
+      margin: auto;
+      text-align: center;
+      padding: 45px 25px;
+    }
+
+    .trophy {
+      font-size: 2.7rem;
+      margin-bottom: 15px;
+    }
+
+    .winners-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .winners-card p {
+      max-width: 450px;
+      margin: auto;
+    }
+
+    .winner-status {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 7px 14px;
+      background: #fff5df;
+      color: #a66a00;
+      border-radius: 50px;
+      font-size: .77rem;
+      font-weight: 800;
+    }
+
+    /* Footer */
+
+    footer {
+      background: var(--navy);
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    footer .logo {
+      color: white;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: #aab7d0;
+      font-size: .82rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      margin-top: 22px;
+      padding-top: 20px;
+      font-size: .78rem;
+      color: #8190ae;
+    }
+
+    /* Animation */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    
+.menu-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: white;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 19px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 5px;
+  transition: .25s;
+}
+
+.menu-toggle.active span:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:last-child {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+    /* Responsive */
+
+    
+@media (max-width: 650px) {
+  .container {
+    width: min(100% - 30px, 1050px);
+  }
+
+  .navbar {
+    min-height: 65px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0 15px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 12px 5px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-cta {
+    padding: 9px 13px;
+    font-size: .8rem;
+  }
+}
+
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+ 
+<header>
+  <div class="container navbar">
+
+    <a href="#" class="logo">MR <span>THANK YOU.</span></a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="navLinks">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#participate" class="nav-link">Participate</a>
+      <a href="#rules" class="nav-link">Rules</a>
+      <a href="#winners" class="nav-link">Winners</a>
+    </nav>
+
+    <a
+      href="https://services.zangi.com/dl/conversation/7537187488"
+      class="nav-cta"
+      target="_blank"
+      rel="noopener noreferrer">
+      Join Giveaway ↗
+    </a>
+
+  </div>
+</header>
+
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        <span></span>
+        A Special Appreciation Giveaway
+      </div>
+
+      <h1>
+        It's Time to Say<br>
+        <span>THANK YOU!</span>
+      </h1>
+
+      <p class="hero-description">
+        A special giveaway from MR THANK YOU to appreciate
+        everyone who has been part of the journey.
+        This is our way of giving back!
+      </p>
+
+      <a
+        href="https://services.zangi.com/dl/conversation/7537187488"
+        class="hero-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Participate Now <span>→</span>
+      </a>
+
+      <p class="hero-note">
+        Simple participation · 100+ Winners · Limited Slots
+      </p>
+
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+
+      <!-- Statistics -->
+
+      <div class="stats">
+        <div class="stat-card">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Expected Winners</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">18+</div>
+          <div class="stat-label">Minimum Age</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">7 Days</div>
+          <div class="stat-label">Announcement Timeline</div>
+        </div>
+      </div>
+
+      <!-- About -->
+
+      <section id="about">
+        <div class="section-heading">
+          <small>Get to Know Us</small>
+          <h2>About the Giveaway</h2>
+          <p>A little appreciation goes a long way.</p>
+        </div>
+
+        <div class="content-grid">
+
+          <div class="card">
+            <div class="card-icon">🎁</div>
+            <h3>Why We're Doing This</h3>
+            <p>
+              MR THANK YOU is hosting this special giveaway
+              to show appreciation to everyone who has
+              supported him. Your support means a lot,
+              and this is a little way of giving back.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🏆</div>
+            <h3>More Chances to Win</h3>
+            <p>
+              We are expecting to select over 100 winners.
+              Winners will be selected randomly and
+              announced on this page after the draw.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Participation -->
+
+      <section id="participate" class="participate">
+        <h2>Ready to Participate?</h2>
+
+        <p>
+          Getting started is easy. Simply click the button
+          below to connect with us on Zangi. Our team will
+          guide you through the participation process.
+        </p>
+
+        <a
+          href="https://services.zangi.com/dl/conversation/7537187488"
+          class="participate-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Start Here on Zangi <span>↗</span>
+        </a>
+
+        <p class="limited-note">
+          Limited slots available. Participation is subject to the giveaway rules.
+        </p>
+      </section>
+
+      <!-- Rules -->
+
+      <section id="rules">
+        <div class="section-heading">
+          <small>Important Information</small>
+          <h2>Giveaway Rules</h2>
+          <p>Please read the requirements before participating.</p>
+        </div>
+
+        <div class="card rules-card">
+
+          <ul class="rules-list">
+            <li>
+              <span class="check">✓</span>
+              <span>Open to everyone aged 18 years and above.</span>
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              <span>Winners will be selected randomly and announced on this page.</span>
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              <span>
+                Your bank details, ATM PIN, passwords or other
+                sensitive financial information will never be
+                required to enter or claim a prize.
+              </span>
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              <span>MR THANK YOU staff and their immediate families are not eligible.</span>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- Winners -->
+
+      <section id="winners" class="winners-section">
+        <div class="section-heading">
+          <small>The Big Announcement</small>
+          <h2>Our Winners</h2>
+          <p>Celebrating those who get lucky!</p>
+        </div>
+
+        <div class="card winners-card">
+          <div class="trophy">🏆</div>
+
+          <h3>Winners Coming Soon!</h3>
+
+          <p>
+            The giveaway draw has not been completed yet.
+            Once the winners are selected, their names
+            will be published right here.
+          </p>
+
+          <span class="winner-status">
+            ● Awaiting Announcement
+          </span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <a href="#" class="logo">MR <span>THANK YOU.</span></a>
+
+    <p>A little appreciation. A lot of gratitude.</p>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> MR THANK YOU. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+      
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("active");
+
+  menuToggle.classList.toggle("active", isOpen);
+  menuToggle.setAttribute("aria-expanded", isOpen);
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu"
+  );
+});
+
+document.querySelectorAll(".nav-link").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuToggle.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+  });
+});
+
+  </script>
+
+</body>
+</html>
